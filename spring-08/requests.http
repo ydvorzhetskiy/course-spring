@@ -1,0 +1,21 @@
+###
+
+GET http://localhost:8080/person
+
+###
+
+GET http://localhost:8080/person/1
+
+###
+
+POST http://localhost:8080/person
+Content-Type: application/json
+
+{
+  "name": "Lermontov"
+}
+
+###
+
+GET http://localhost:8080/person/2
+
