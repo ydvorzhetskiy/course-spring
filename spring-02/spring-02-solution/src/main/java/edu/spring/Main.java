@@ -1,10 +1,10 @@
 package edu.spring;
 
+import edu.spring.domain.Person;
+import edu.spring.service.PersonService;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
-import edu.spring.domain.Person;
-import edu.spring.service.PersonService;
 
 @Configuration
 @ComponentScan

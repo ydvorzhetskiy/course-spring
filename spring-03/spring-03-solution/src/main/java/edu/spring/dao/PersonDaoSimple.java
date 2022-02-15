@@ -7,6 +7,7 @@ import edu.spring.domain.Person;
 public class PersonDaoSimple implements PersonDao {
 
     public Person findByName(String name) {
+        System.out.println("Метод вызван с именем " + name);
         return new Person(name, 18);
     }
 }

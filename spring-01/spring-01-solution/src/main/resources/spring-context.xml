@@ -4,11 +4,14 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="personDao" class="edu.spring.dao.PersonDaoSimple">
+    <bean id="personDao" name="daoSimple"
+          class="edu.spring.dao.PersonDaoSimple">
+        <property name="defaultAge" value="18"/>
     </bean>
 
-    <bean id="personService" class="edu.spring.service.PersonServiceImpl">
-        <constructor-arg name="dao" ref="personDao"/>
+    <bean id="personService"
+          class="edu.spring.service.PersonServiceImpl">
+        <property name="dao" ref="personDao"/>
     </bean>
 
 </beans>
