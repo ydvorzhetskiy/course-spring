@@ -1,10 +1,9 @@
 package edu.spring;
 
-import org.h2.tools.Console;
+import edu.spring.dao.PersonDao;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
-import edu.spring.dao.PersonDao;
 
 @SpringBootApplication
 public class Main {
@@ -15,6 +14,6 @@ public class Main {
 
         PersonDao dao = context.getBean(PersonDao.class);
 
-        Console.main(args);
+        // TODO: add your code here
     }
 }

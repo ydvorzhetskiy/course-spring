@@ -1,11 +1,10 @@
 package edu.spring;
 
-import org.h2.tools.Console;
+import edu.spring.dao.PersonDao;
+import edu.spring.domain.Person;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
-import edu.spring.dao.PersonDao;
-import edu.spring.domain.Person;
 
 @SpringBootApplication
 public class Main {
@@ -25,7 +24,5 @@ public class Main {
         Person ivan = dao.getById(2);
 
         System.out.println("Ivan id: " + ivan.getId() + " name: " + ivan.getName());
-
-        Console.main(args);
     }
 }
