@@ -1,9 +1,14 @@
 package edu.spring;
 
-import edu.spring.dao.PersonDao;
+import edu.spring.dao.DepartmentDao;
+import edu.spring.dao.EmployeeDao;
+import edu.spring.domain.Department;
+import edu.spring.domain.Employee;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
+
+import java.util.List;
 
 @SpringBootApplication
 public class Main {
@@ -12,8 +17,18 @@ public class Main {
 
         ApplicationContext context = SpringApplication.run(Main.class);
 
-        PersonDao dao = context.getBean(PersonDao.class);
+        DepartmentDao departmentDao = context.getBean(DepartmentDao.class);
+        EmployeeDao employeeDao = context.getBean(EmployeeDao.class);
 
-        // TODO: add your code here
+        List<Department> departments = departmentDao.getAll();
+        departments.forEach(dep -> {
+            System.out.println("============================");
+            System.out.println(dep.getName());
+            System.out.println("============================");
+            List<Employee> emps = employeeDao.getByDepartment(dep);
+            emps.forEach(emp -> {
+                System.out.println(emp.getTabNum() + " " + emp.getPosition() + " " + emp.getFullName());
+            });
+        });
     }
 }
